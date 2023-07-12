@@ -28,7 +28,8 @@ const DESCRIPTIONS = [
 
 const PHOTOS_COUNT = 25;
 
-const id = 1;
+let id = 1;
+let photosId = 1;
 let commentId = 1;
 
 const createComment = () => ({ //Создаем комментарий
@@ -50,8 +51,8 @@ const createComments = () => { //Создаем массив комментар�
 };
 
 const createPhoto = () => ({ //Создаем фото
-  id: id,
-  url: `photos/${id}.jpg`,
+  id: id++,
+  url: `photos/${photosId++}.jpg`,
   description: DESCRIPTIONS[getRandomNumber(0, DESCRIPTIONS.length)],
   likes: getRandomNumber(15, 200),
   comments: createComments(),
